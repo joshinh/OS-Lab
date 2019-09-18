@@ -1,0 +1,36 @@
+	Lab 7. CS333. Autumn 2018
+
+
+1. Download the source code from
+   'https://www.cse.iitb.ac.in/~puru/courses/autumn18/labs/xv6-public.tar.gz'
+
+2. Source code companion books is available at 
+   'https://www.cse.iitb.ac.in/~puru/courses/autumn18/labs/xv6-rev10.pdf'
+
+3. lab7.pdf describes the lab statement.
+
+4. The directory 'test-programs' contains sample programs for
+   exercise 1.
+
+5. The directory 'sample-outputs' contains the samples 
+   outputs of exercise 1, 2, and 3.
+
+7. Deadline is: 
+   Monday, 24th September 2018 - 05:00 PM
+
+
+-----------------------------------------------------------------------------------------
+Answers to question 0:
+
+i. The name of the function for obtaining a spinlock is "acquire(struct spinlock *lK)" and the one to release a lock is "release(struct spinlock *lk)".
+
+ii. The holding function returns true if that particular lock(which is passed as argument) is held i.e locked and the cpu which is holding the lock is this same CPU. It returns false otherwise.
+
+iii. Adding an extra acquire() function in the exit() system call in proc.c leads to a trigger panic after the ls function. This is because after the first acquire function, that particular lock is held by the current CPU and hence the holding() function returns true. Thus the trigger panic is called via the holding function.
+
+iv. pushcli - It is use to call the cli() which stands for clear interrput. This can thus help in disabling interrupts. It also keeps track of the number of times it has been called so that we'll need appropriate number of pops.
+    popcli - It is used to call the sti() function which stands for set interrupt. This can thus help in enabling interrrupts back (if they were enabled before calling pushcli()). It also checks that pop has been called the same number of times as push with the "ncli" paramter.
+    xchg - this is the atomic instruction to exchange the contents of two operands.
+
+v. If sti() has been called after acquire (which itself calls pushcli()), it is possible that someone can now interrput the CPU since interrupts are not disabled. If such a case happens, then the CPU essentially looses control of that lock since it has been interrupted when that lock was held. This can thus lead to deadlock condition. 
+

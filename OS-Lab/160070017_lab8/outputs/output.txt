@@ -1,0 +1,84 @@
+1.
+
+i.
+
+counter 1
+
+Counter without lock 
+Data[0] = 13732
+
+counter 2
+
+Counter with mutex lock 
+Data[0] = 20000
+
+ii.
+
+lock-and-delay 1
+
+Lock-and-dalay with spinlock 
+Data[0] = 300
+Duration: 3951 ticks 
+
+lock-and-delay 2
+
+Lock-and-dalay with mutex 
+Data[0] = 300
+Duration: 3682 ticks 
+
+
+iii.
+
+nlocks
+data[0] = 2000
+data[1] = 2000
+data[2] = 2000
+data[3] = 2000
+data[4] = 2000
+data[5] = 2000
+data[6] = 2000
+data[7] = 2000
+data[8] = 2000
+data[9] = 2000
+
+
+2.
+
+prodcon t1-f1.txt t1-f2.txt
+[88]: Produced an item. Curernt buffer size: 1
+[87]: Produced an item. Curernt buffer size: 2
+[87]: Produced an item. Curernt buffer size: 3
+[88]: Produced an item. Curernt buffer size: 4
+[87]: Produced an item. Curernt buffer size: 5
+[87]: Produced an item. Curernt buffer size: 6
+[88]: Produced an item. Curernt buffer size: 7
+[88]: Produced an item. Curernt buffer size: 8
+[88]: Produced an item. Curernt buffer size: 9
+[88]: Produced an item. Curernt buffer size: 10
+[87]: Consumed an item. Curernt buffer size: 9
+[88]: Produced an item. Curernt buffer size: 10
+[87]: Consumed an item. Curernt buffer size: 9
+[88]: Produced an item. Curernt buffer size: 10
+
+prodcon t2-f1.txt t2-f2.txt
+[90]: Produced an item. Curernt buffer size: 1
+[89]: Consumed an item. Curernt buffer size: 0
+[90]: Produced an item. Curernt buffer size: 1
+[89]: Consumed an item. Curernt buffer size: 0
+[90]: Produced an item. Curernt buffer size: 1
+[89]: Consumed an item. Curernt buffer size: 0
+[89]: Produced an item. Curernt buffer size: 1
+[90]: Consumed an item. Curernt buffer size: 0
+[90]: Produced an item. Curernt buffer size: 1
+[89]: Consumed an item. Curernt buffer size: 0
+[90]: Produced an item. Curernt buffer size: 1
+[89]: Consumed an item. Curernt buffer size: 0
+[90]: Produced an item. Curernt buffer size: 1
+[90]: Produced an item. Curernt buffer size: 2
+
+
+
+
+
+
+

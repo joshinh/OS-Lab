@@ -1,0 +1,5 @@
+$ sigtest1
+[6] Parent waits for 5 seconds 
+[6] Parent sends signal to child 
+Signal handler invoked !!!. signal type: 1 
+

@@ -1,0 +1,6 @@
+When the child is waiting for the input the status is as below:
+6330 pts/19   S+     0:00 ./a.out
+After the input is pressed:
+6330 pts/19   Z+     0:00 [a.out] <defunct>
+
+In the first case, the status S+ indicates that it is in an 'interruptable sleep' mode i.e. it is waiting for an event to complete. When we press the key, the child process has exited but the process still has some state till its parent exits. This status, Z+ indicates that the process is defunct or 'zombie'. This zombie process is cleaned up when the parent process exits or after wait system call. 

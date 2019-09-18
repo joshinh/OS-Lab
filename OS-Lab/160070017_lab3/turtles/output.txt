@@ -1,0 +1,60 @@
+Bazinga>ls
+a.out  dup.c  lab3.pdf	make-tokens.c  p1a.c  p1b.c  p1c.c  p1c.txt  pipes.c  README  sample-output  sample-turtle  temp.txt  turtle.c
+Bazinga>mkdir test
+Bazinga>ls
+a.out  dup.c  lab3.pdf	make-tokens.c  p1a.c  p1b.c  p1c.c  p1c.txt  pipes.c  README  sample-output  sample-turtle  temp.txt  test  turtle.c
+Bazinga>cd test
+Bazinga>pwd
+/home/nitish/Desktop/Sem 5/OS lab/lab3/test
+Bazinga>cd ..
+Bazinga>pwd
+/home/nitish/Desktop/Sem 5/OS lab/lab3
+Bazinga>cd
+Wrong number of arguments
+Bazinga>rm test
+rm: cannot remove 'test': Is a directory
+Bazinga>rmdir test
+Bazinga>ls
+a.out  dup.c  lab3.pdf	make-tokens.c  p1a.c  p1b.c  p1c.c  p1c.txt  pipes.c  README  sample-output  sample-turtle  temp.txt  turtle.c
+Bazinga>sleep 5
+Bazinga>echo "Hello"
+"Hello"
+Bazinga>echo "Hello" > hello.txt
+Bazinga>ls
+a.out  dup.c  hello.txt  lab3.pdf  make-tokens.c  p1a.c  p1b.c	p1c.c  p1c.txt	pipes.c  README  sample-output	sample-turtle  temp.txt  turtle.c
+Bazinga>cat hello.txt
+"Hello"
+Bazinga>cd hello.txt
+Some error
+Bazinga>cat hi.txt
+cat: hi.txt: No such file or directory
+Bazinga>sleep 5 ;; cat hello.txt ;; sleep 1 ;; echo "hi" ;; ls
+"Hello"
+"hi"
+a.out  dup.c  hello.txt  lab3.pdf  make-tokens.c  p1a.c  p1b.c	p1c.c  p1c.txt	pipes.c  README  sample-output	sample-turtle  temp.txt  turtle.c
+Bazinga>cat hi.txt ;; echo "How are you doing?"
+cat: hi.txt: No such file or directory
+"How are you doing?"
+Bazinga>sleep 10
+Bazinga>ps -a ;; pwd ;; echo "Done"
+  PID TTY          TIME CMD
+21812 pts/20   00:00:00 a.out
+22018 pts/20   00:00:00 ps
+/home/nitish/Desktop/Sem 5/OS lab/lab3
+"Done"
+Bazinga>exit
+
+-----------------------------------------------------------------------------
+
+Bazinga>ls
+a.out  dup.c  hello.txt  lab3.pdf  make-tokens.c  output.txt  p1a.c  p1b.c  p1c.c  p1c.txt  pipes.c  README  sample-output  sample-turtle  temp.txt  turtle.c
+Bazinga>cd .
+Bazinga>^C
+
+Bazinga>eixt
+command not found
+Bazinga>exit
+
+-------------------------------------------------------------------------
+
+

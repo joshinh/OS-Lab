@@ -1,0 +1,11 @@
+1. 3177 r->next = kmem.freelist;
+   3178 kmem.freelist = r;
+
+Here kmem.freelist is the list of free pages (actually a struct run). We first create a new struct run r and then on line 3178 assign this new struct as the kmem.freelist where we already have the "next" of r set to the original kmem.freelist on line 3177. Thus essentially these two lines update the kmem.freelist by adding the newly made free page as its first element. (i.e. it adds a node to the linked list)
+
+2. 1740 pde = &pgdir[PDX(va)];
+   1742 pgtab = (pte_t*)p2v(PTE_ADDR(*pde)); 
+   1753 return &pgtab[PTX(va)];
+
+
+Here PDX, finds the 10 bits in va which corresponds to the page directory index. We then lookup the corresponding entry in page directory pgdir using this page directory index. On line 1742 PTE_ADDR first finds the 20 bits in pde correspoding to address; the p2v function then converts this physical address to virtual address and returns the final pointer the page table. In the last line 1753, PTX first finds the 10 bits in va corresponding to the page table index and returns the correspoding page table entry (PTE) in pgtab.

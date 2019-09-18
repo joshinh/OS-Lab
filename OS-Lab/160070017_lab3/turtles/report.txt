@@ -1,0 +1,9 @@
+Explaination:
+
+We basically divide the program into following functions:
+1. reading - This function continuosly reads from the user and make it ready to be parsed.
+2. parse - As name suggests, this parses the tokens and decide which of the available functions the command entered by the user corresponds to.
+3. cd_handle - This function is specifically designed to handle cd. This is because cd is treated different than other simple commands because we do not fork before cd (also we must use chdir)
+4. handle_other - This is used to handle all the other simple commands
+5. redirect_out - This is used to handle redirecting output to file.
+6. sequential - This is used to run commands sequentially in the foreground when they are separated by ;; . In this case, we handle the part before ;; separatelty and then we recursively call parse() to handle any other commands after ;; including multiple occurences of double colon.

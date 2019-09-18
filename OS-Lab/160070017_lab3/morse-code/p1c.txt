@@ -1,0 +1,15 @@
+The output when grandchild exits first:
+Child 5362 is created by parent 5361 (sleeps for 10 seconds)
+Child 5363 is created by parent 5362 (sleeps for 5 seconds)
+Parent 5362: Child 5363 is exited
+Parent 5361: Child 5362 is exited
+
+The output when child exits first:
+Child 5362 is created by parent 5361 (sleeps for 5 seconds)
+Child 5363 is created by parent 5362 (sleeps for 10 seconds)
+Parent 5361: Child 5362 is exited
+
+
+Observation:
+In the first case, after 5 sec as expected the grandchild exits but we also observe that the child exits. The reason for this is that when the sighandler() function is executed, it directly returns to the next statement - This means that the sleep function effect does not come into play and hence both of them exit.
+In the second case, the child exits first and we get the correspoding output. Since the child has already exited, we do not get the corresponding output for the granchild.
